@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView tx = (TextView)findViewById(R.id.text_px);
         final TextView ta = (TextView)findViewById(R.id.text_area);
-
+        TextView dimenvalue = (TextView)findViewById(R.id.textvalue);
+        //好山好水好寂寞。真脏真乱真快活
+        dimenvalue.setText("count X:"+getResources().getInteger(R.integer.main_chat_placeholder_critical));
 
         float width10 = getResources().getDimension(R.dimen.width_10);
 

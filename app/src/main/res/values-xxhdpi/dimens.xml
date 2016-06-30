@@ -1,0 +1,5 @@
+<resources>
+    <integer name="main_chat_placeholder_critical">2</integer>
+
+    <string name="value_name">values-xxhdpi</string>
+</resources>

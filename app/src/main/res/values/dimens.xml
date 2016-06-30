@@ -5,4 +5,8 @@
 
 
     <dimen name="width_10">10dp</dimen>
+
+    <integer name="main_chat_placeholder_critical">-1</integer>
+
+    <string name="value_name">values</string>
 </resources>
