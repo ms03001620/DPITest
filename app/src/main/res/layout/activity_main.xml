@@ -13,54 +13,72 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/value_name"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_marginLeft="10dp"
+            android:textSize="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/value_name" />
+
+        <TextView
+            android:textSize="24dp"
             android:id="@+id/textvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/value_name"/>
+            android:layout_marginLeft="10dp"
+            android:text="@string/value_name" />
 
     </LinearLayout>
 
 
-
     <TextView
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:id="@+id/text_px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="Hello World!" />
 
+    <RelativeLayout
+        android:layout_width="420dp"
+        android:layout_height="10dp"
+        android:background="#0f0">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="#FF0000" />
+    </RelativeLayout>
 
 
     <SeekBar
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:id="@+id/seek"
-        android:progress="100"
-        android:max="1000"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:max="1000"
+        android:progress="100" />
 
     <TextView
         android:id="@+id/text_area"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:background="#FF0000"
-        android:text="100dp" />
+        android:gravity="center"
+        android:text="100dp"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
 
     <TextView
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:background="#00FF00"
-        android:text="100dp" />
+        android:gravity="center"
+        android:text="100dp"
+        android:textSize="25sp" />
 </LinearLayout>

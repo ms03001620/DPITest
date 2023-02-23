@@ -2,6 +2,7 @@ package com.example.mark.dpitest;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ViewGroup;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         final TextView ta = (TextView)findViewById(R.id.text_area);
         TextView dimenvalue = (TextView)findViewById(R.id.textvalue);
         //好山好水好寂寞。真脏真乱真快活
-        dimenvalue.setText("count X:"+getResources().getInteger(R.integer.main_chat_placeholder_critical));
+        dimenvalue.setText("count X:" + getResources().getInteger(R.integer.main_chat_placeholder_critical)
+                + "\n" + getScreenPx());
 
         float width10 = getResources().getDimension(R.dimen.width_10);
 
@@ -58,5 +60,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public String getScreenPx() {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+        return displayMetrics.toString();
     }
 }
