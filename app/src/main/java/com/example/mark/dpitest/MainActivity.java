@@ -1,12 +1,14 @@
 package com.example.mark.dpitest;
 
+import android.content.Context;
 import android.content.res.Resources;
+import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -25,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         TextView dimenvalue = (TextView)findViewById(R.id.textvalue);
         //好山好水好寂寞。真脏真乱真快活
         dimenvalue.setText("count X:" + getResources().getInteger(R.integer.main_chat_placeholder_critical)
-                + "\n" + getScreenPx());
+                + "\n" + getScreenPx(getWindowManager().getDefaultDisplay())
+                + "\n" + getMultiDisplayInfo()
+        );
 
         float width10 = getResources().getDimension(R.dimen.width_10);
 
@@ -59,14 +63,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //getMultiDisplayInfo();
     }
 
-    public String getScreenPx() {
+    public String getScreenPx(Display display) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        display.getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
         return displayMetrics.toString();
+    }
+
+    public String getMultiDisplayInfo() {
+        String result = "";
+        DisplayManager manager = (DisplayManager) getSystemService(Context.DISPLAY_SERVICE);
+        for (Display display : manager.getDisplays()) {
+            result += getScreenPx(display)+"\n";
+        }
+        return result;
     }
 }
