@@ -3,6 +3,7 @@ package com.example.mark.dpitest;
 import android.content.Context;
 import android.content.res.Resources;
 import android.hardware.display.DisplayManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         float width10 = getResources().getDimension(R.dimen.width_10);
 
-        tx.setText("10dp = "+width10+"px");
+        tx.setText("10dp = "+width10+"px"+",INT:"+(Build.VERSION.SDK_INT)+",android:"+Build.VERSION.RELEASE);
 
         SeekBar seek = (SeekBar)findViewById(R.id.seek);
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
