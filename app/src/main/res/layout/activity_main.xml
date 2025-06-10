@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="683dp"
+        android:layout_width="540px"
         android:layout_height="10dp"
         android:background="#0f0">
 
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:max="1000"
+            android:max="2000"
             android:progress="100" />
 
         <TextView
