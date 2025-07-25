@@ -1,5 +1,6 @@
 package com.example.mark.dpitest
 
+import android.content.Context
 import android.content.res.Configuration
 import android.hardware.display.DisplayManager
 import android.os.Build
@@ -13,6 +14,8 @@ import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         sb.append("${getScreenPx(windowManager.defaultDisplay)}")
         sb.append("${multiDisplayInfo}")
         sb.append("isNight:${isNightMode()}")
+        sb.append("\nGooglePlayServicesAvailable:${isGmsAvailable(this)}")
 
         return sb.toString()
     }
@@ -94,4 +98,15 @@ class MainActivity : AppCompatActivity() {
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         return currentNightMode == Configuration.UI_MODE_NIGHT_YES
     }
+}
+
+/**
+ * 检查设备上 Google Play Services 是否可用。
+ * @return true 如果服务可用。
+ */
+fun isGmsAvailable(context: Context): Boolean {
+    val googleApiAvailability = GoogleApiAvailability.getInstance()
+    val resultCode = googleApiAvailability.isGooglePlayServicesAvailable(context)
+    // ConnectionResult.SUCCESS 表示服务可用
+    return resultCode == ConnectionResult.SUCCESS
 }
