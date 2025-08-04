@@ -77,6 +77,8 @@ class MainActivity : AppCompatActivity() {
         sb.append(multiDisplayInfo)
         sb.append("isNight:${isNightMode()}")
         sb.append("\nInch:${getScreenInch(this)}")
+        sb.append("\nSmallestScreenWidthDp:${getSmallestScreenWidthDp(this)}")
+
         sb.append("\nGooglePlayServicesAvailable:${isGmsAvailable(this)}")
 
         return sb.toString()
@@ -158,6 +160,11 @@ class MainActivity : AppCompatActivity() {
         val diagonalInches = sqrt(widthInches.pow(2.0) + heightInches.pow(2.0))
 
         return diagonalInches
+    }
+
+    fun getSmallestScreenWidthDp(context: Context): Int {
+        val configuration = context.resources.configuration
+        return configuration.smallestScreenWidthDp
     }
 
 }

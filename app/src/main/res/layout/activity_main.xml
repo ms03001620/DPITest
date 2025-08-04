@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="540px"
+        android:layout_width="800px"
         android:layout_height="10dp"
         android:background="#0f0">
 
