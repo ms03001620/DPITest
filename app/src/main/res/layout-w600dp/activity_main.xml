@@ -35,7 +35,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context="com.example.mark.dpitest.MainActivity">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -45,13 +46,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/value_name"
-                android:textSize="66dp" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/textvalue"
@@ -59,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="@string/value_name"
-                android:textSize="66dp" />
+                android:textSize="16dp" />
 
         </LinearLayout>
 
@@ -70,7 +71,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:text="Hello World!"
-            android:textSize="64dp" />
+            android:textSize="24dp" />
+
+
 
 
         <SeekBar
@@ -78,27 +81,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:max="3000"
+            android:max="2000"
             android:progress="100" />
 
         <TextView
             android:id="@+id/text_area"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:background="#FF0000"
             android:gravity="center"
-            android:text="300dp"
+            android:text="100dp"
             android:textColor="@color/white"
-            android:textSize="65sp" />
+            android:textSize="25sp" />
 
         <TextView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:background="#00FF00"
             android:gravity="center"
-            android:text="300dp"
-            android:textSize="65sp" />
+            android:text="100dp"
+            android:textSize="25sp" />
     </LinearLayout>
 </FrameLayout>

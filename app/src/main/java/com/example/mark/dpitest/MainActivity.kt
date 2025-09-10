@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         sb.append("isNight:${isNightMode()}")
         sb.append("\nInch:${getScreenInch(this)}")
         sb.append("\nSmallestScreenWidthDp:${getSmallestScreenWidthDp(this)}")
+        sb.append("\nSmallestScreenHeightDp:${getScreenHeightDp(this)}")
 
         sb.append("\nGooglePlayServicesAvailable:${isGmsAvailable(this)}")
 
@@ -165,6 +166,11 @@ class MainActivity : AppCompatActivity() {
     fun getSmallestScreenWidthDp(context: Context): Int {
         val configuration = context.resources.configuration
         return configuration.smallestScreenWidthDp
+    }
+
+    fun getScreenHeightDp(context: Context): Int {
+        val configuration = context.resources.configuration
+        return configuration.screenHeightDp
     }
 
 }
